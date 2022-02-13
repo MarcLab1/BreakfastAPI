@@ -55,7 +55,7 @@ fun RecipeListItem(recipe: Recipe, onClick: () -> Unit) {
                     }
                 }
             }
-            Column(modifier = Modifier.padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(modifier = Modifier.padding(start = 10.dp, end = 5.dp,), horizontalAlignment = Alignment.CenterHorizontally) {
 
                 Text(
                     "${recipe.cookTimeMinutes}",
