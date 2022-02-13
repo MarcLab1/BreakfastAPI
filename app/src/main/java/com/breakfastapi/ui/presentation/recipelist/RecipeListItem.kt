@@ -19,7 +19,7 @@ import com.breakfastapi.model.Recipe
 import com.breakfastapi.util.getFood
 
 @Composable
-fun RecipeListItem(recipe: Recipe, onClick:() -> Unit) {
+fun RecipeListItem(recipe: Recipe, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -27,7 +27,7 @@ fun RecipeListItem(recipe: Recipe, onClick:() -> Unit) {
         shape = AbsoluteCutCornerShape(0.dp),
         border = BorderStroke(0.3.dp, color = Color.LightGray)
     ) {
-       // Text(index.toString())
+        // Text(index.toString())
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -55,15 +55,23 @@ fun RecipeListItem(recipe: Recipe, onClick:() -> Unit) {
                     }
                 }
             }
-            Column(modifier = Modifier.padding(10.dp)) {
+            Column(modifier = Modifier.padding(10.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+
                 Text(
-                    "${recipe.cookTimeMinutes} mins",
+                    "${recipe.cookTimeMinutes}",
                     style = MaterialTheme.typography.h2,
                     textAlign = TextAlign.Center
                 )
+                Text(
+                    "minutes",
+                    style = MaterialTheme.typography.h4,
+                    textAlign = TextAlign.Center
+                )
+
             }
         }
     }
 }
+
 
 

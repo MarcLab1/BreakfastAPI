@@ -58,7 +58,7 @@ fun RecipeDetailContent(recipe: Recipe) {
                         painter = painterResource(R.drawable.ic_baseline_access_time_24),
                         contentDescription = "time", modifier = Modifier.padding(end = 3.dp)
                     )
-                    Text("${recipe.cookTimeMinutes} mins", style = MaterialTheme.typography.h2)
+                    Text("${recipe.cookTimeMinutes} minutes", style = MaterialTheme.typography.h2)
                 }
                 Spacer(modifier = Modifier.padding(5.dp))
                 Text("Ingredients: ", style = MaterialTheme.typography.h3)
