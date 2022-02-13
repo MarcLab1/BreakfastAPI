@@ -35,6 +35,8 @@ class RecipeViewModel @Inject constructor(
                     when (result) {
                         is Resource.Success -> {
                             recipes.value += result.data
+                            if (apiCall == Constants.PAGESIZE)
+                                networkStatus.value = NetworkStatus.READY
                         }
                         is Resource.Error -> {
                             networkStatus.value = NetworkStatus.ERROR
@@ -43,8 +45,6 @@ class RecipeViewModel @Inject constructor(
                         is Resource.Loading -> {
                         }
                     }
-                    if (apiCall == Constants.PAGESIZE) //we are done here
-                        networkStatus.value = NetworkStatus.READY
                 }
             }
         }

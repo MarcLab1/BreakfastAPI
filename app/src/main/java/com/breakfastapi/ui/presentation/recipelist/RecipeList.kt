@@ -50,13 +50,3 @@ fun RecipeList(nav: NavController) {
             )
     }
 }
-/*
-@Composable
-fun TestingTesting123(vm: RecipeViewModel) {
-    Column()
-    {
-        //Text(vm.networkCallCount.value.toString(), style = MaterialTheme.typography.h1)
-        //Text(vm.networkStatus.value.name, style = MaterialTheme.typography.h1)
-    }
-}
- */
