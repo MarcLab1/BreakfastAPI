@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -22,8 +23,8 @@ fun RecipeList(nav: NavController) {
 
     Box(modifier = Modifier.fillMaxSize())
     {
-        //TestingTesting123(vm)
         LazyColumn() {
+
             itemsIndexed(vm.recipes.value)
             { index, recipe ->
                 RecipeListItem(recipe, {
@@ -31,7 +32,7 @@ fun RecipeList(nav: NavController) {
                     nav.navigate("${Routes.RECIPE.route}/$jsonRecipe")
                 })
 
-                if (((index + 1) >= vm.recipes.value.size) && vm.networkStatus.value != NetworkStatus.LOADING) {
+                if (((index + 1) >= vm.recipes.value.size) && vm.networkStatus.value == NetworkStatus.READY) {
                     vm.loadRecipe()
                 }
             }
@@ -39,7 +40,8 @@ fun RecipeList(nav: NavController) {
         if (vm.networkStatus.value == NetworkStatus.LOADING)
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
 
-        if (vm.networkStatus.value == NetworkStatus.ERROR)
+        //also don't show if the network went down after a non-zero number of sucessful calls
+        if (vm.networkStatus.value == NetworkStatus.ERROR && vm.recipes.value.size == 0)
             Text(
                 vm.networkStatus.value.msg,
                 modifier = Modifier
@@ -48,8 +50,13 @@ fun RecipeList(nav: NavController) {
             )
     }
 }
-
+/*
 @Composable
 fun TestingTesting123(vm: RecipeViewModel) {
-    Text(vm.networkCallCount.value.toString())
+    Column()
+    {
+        //Text(vm.networkCallCount.value.toString(), style = MaterialTheme.typography.h1)
+        //Text(vm.networkStatus.value.name, style = MaterialTheme.typography.h1)
+    }
 }
+ */

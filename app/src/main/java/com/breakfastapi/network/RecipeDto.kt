@@ -26,9 +26,7 @@ fun RecipeDto.toRecipe(): Recipe {
         id,
         recipeName,
         cookTimeMinutes,
-        //getListFromString(ingredients, Constants.COMMA),
         removeBrackets(ingredients),
-        //getListFromString(directions, Constants.PERIOD),
         removeBrackets(directions)
     )
 }

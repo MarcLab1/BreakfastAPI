@@ -27,7 +27,6 @@ fun RecipeListItem(recipe: Recipe, onClick: () -> Unit) {
         shape = AbsoluteCutCornerShape(0.dp),
         border = BorderStroke(0.3.dp, color = Color.LightGray)
     ) {
-        // Text(index.toString())
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -67,7 +66,6 @@ fun RecipeListItem(recipe: Recipe, onClick: () -> Unit) {
                     style = MaterialTheme.typography.h4,
                     textAlign = TextAlign.Center
                 )
-
             }
         }
     }
