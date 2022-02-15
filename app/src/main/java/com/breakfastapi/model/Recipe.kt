@@ -7,9 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class Recipe(
     val id: Long,
     val recipeName: String,
-    val cookTimeMinutes: Long,
-   // val ingredientsList: List<String>,
+    val totalDuration: Long,
     val ingredientsString: String,
-    //val directionsList: List<String>,
     val directionsString: String
 ) : Parcelable

@@ -1,6 +1,5 @@
 package com.breakfastapi.util
 
-import com.breakfastapi.network.removeBrackets
 import java.lang.StringBuilder
 
 object Helper {
@@ -28,5 +27,13 @@ object Helper {
             return time.toString()
         else
             return "?"
+    }
+
+    fun getStringFromList(list: List<String>) : String
+    {  return list.joinToString(", ")
+    }
+
+    fun removeBrackets(input: String): String {
+        return input.replace("'", "")
     }
 }

@@ -12,6 +12,6 @@ class Repository_Impl(private val apiService: ApiService) : Repository {
         } catch (ex: Exception) {
             return Resource.Error(ex)
         }
-        return Resource.Success(response.toRecipe())
+        return Resource.Success(response.recipe!!.toRecipe())
     }
 }

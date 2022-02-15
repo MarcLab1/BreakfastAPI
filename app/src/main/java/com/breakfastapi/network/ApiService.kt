@@ -5,6 +5,6 @@ import retrofit2.http.GET
 interface ApiService {
 
    @GET(".")
-   suspend fun getRecipe() : RecipeDto
+   suspend fun getRecipe() : ResponseDto
 
 }
