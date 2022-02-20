@@ -1,5 +1,8 @@
 package com.breakfastapi.di
 
+import android.app.Application
+import androidx.room.Room
+import com.breakfastapi.database.RecipeDatabase
 import com.breakfastapi.network.ApiService
 import com.breakfastapi.repository.Repository
 import com.breakfastapi.repository.Repository_Impl
@@ -18,11 +21,6 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideString() = "always for testing 123"
-
-
-    @Singleton
-    @Provides
     fun provideApiService(): ApiService {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
@@ -33,7 +31,15 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(apiService: ApiService): Repository {
-        return Repository_Impl(apiService)
+    fun provideRepository(apiService: ApiService, recipeDatabase: RecipeDatabase): Repository {
+        return Repository_Impl(apiService, recipeDatabase)
     }
+
+    @Singleton
+    @Provides
+    fun ProvideReceipeDatabase(application: Application): RecipeDatabase {
+        return Room.databaseBuilder(application, RecipeDatabase::class.java, "recipe_db")
+            .fallbackToDestructiveMigration().build()
+    }
+
 }

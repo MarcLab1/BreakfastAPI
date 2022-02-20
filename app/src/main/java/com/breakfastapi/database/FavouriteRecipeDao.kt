@@ -1,14 +1,20 @@
-package com.breakfastapi.repository
+package com.breakfastapi.database
 
+import androidx.room.*
+import androidx.room.OnConflictStrategy.REPLACE
 import com.breakfastapi.model.Recipe
-import com.breakfastapi.util.Resource
 import kotlinx.coroutines.flow.Flow
 
-interface Repository {
+@Dao
+interface FavouriteRecipeDao {
 
-    suspend fun getRecipe() : Resource<Recipe>
-
+    @Query("SELECT * FROM recipe")
     fun getFavouriteRecipes() : Flow<List<Recipe>>
+
+    @Insert(onConflict = REPLACE)
     suspend fun insertFavouriteRecipe(recipe: Recipe)
+
+    @Delete
     suspend fun deleteFavouriteRecipe(recipe: Recipe)
+
 }

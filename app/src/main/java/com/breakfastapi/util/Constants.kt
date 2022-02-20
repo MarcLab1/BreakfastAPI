@@ -5,5 +5,7 @@ object Constants {
     val COMMA = ","
     val PERIOD = "."
     val PAGESIZE = 10 // # of recipes to load at one time
+
+    val FAVOURITES_EMPTY_MSG = "No recipes saved to favourites"
 }
 

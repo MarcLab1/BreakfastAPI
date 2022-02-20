@@ -1,4 +1,4 @@
-package com.breakfastapi.ui.presentation
+package com.breakfastapi.ui.presentation.recipelist
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class RecipeViewModel @Inject constructor(
+class RecipeListViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 

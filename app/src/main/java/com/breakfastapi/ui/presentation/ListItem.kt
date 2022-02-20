@@ -19,7 +19,7 @@ import com.breakfastapi.model.Recipe
 import com.breakfastapi.util.getFood
 
 @Composable
-fun RecipeListItem(recipe: Recipe, onClick: () -> Unit) {
+fun ListItem(recipe: Recipe, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

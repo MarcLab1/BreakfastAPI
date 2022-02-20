@@ -86,4 +86,11 @@ dependencies {
     implementation("io.coil-kt:coil-compose:$coil")
     implementation("io.coil-kt:coil:$coil")
 
+    //Room
+    def roomVersion = "2.4.1"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+
+
 }

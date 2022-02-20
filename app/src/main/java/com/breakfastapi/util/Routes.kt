@@ -4,4 +4,5 @@ enum class Routes(val route: String)
 {
     HOME("home"),
     RECIPE("recipe"),
+    FAVOURITES("favourites")
 }

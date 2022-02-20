@@ -26,7 +26,7 @@ val foodList = listOf<Food>(
     Food("pie", R.drawable.pie),
     Food("pork", R.drawable.pork),
     Food("potato", R.drawable.potato),
-    Food("ribs", R.drawable.ribs),
+    Food("rib", R.drawable.ribs),
     Food("rice", R.drawable.rice),
     Food("salad", R.drawable.salad),
     Food("sandwich", R.drawable.sandwich),
@@ -36,7 +36,7 @@ val foodList = listOf<Food>(
     Food("steak", R.drawable.steak),
     Food("stew", R.drawable.stew),
     Food("turkey", R.drawable.turkey),
-    Food("slowcook", R.drawable.slowcook) //somewhat generic so I put last
+    Food("slow", R.drawable.slowcook) //somewhat generic so I put last
 )
 private val genericFood = Food("food", R.drawable.food)
 
