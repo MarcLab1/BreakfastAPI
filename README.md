@@ -12,13 +12,15 @@
   * Hilt (Dagger)
   * Coil
   * Compose Navigation
+  * Room persistence library
+  * Scaffold
+  * Snackbar/SnackbarHost
 
 ## Special thank you to  
 
   *  <a href="https://github.com/MariiaSizova/breakfastapi"> MariiaSizova </a>
   * Pixabay for the free images
 
-
 ##
-<img src="https://user-images.githubusercontent.com/16921266/153760276-5d774b8e-4d42-4544-8c3a-0fbb843996e2.jpg" width="500">
-<img src="https://user-images.githubusercontent.com/16921266/153760278-1a52b180-4949-4461-a2a5-c24736ba75dc.jpg" width="500">
+<img src="https://user-images.githubusercontent.com/16921266/154864155-850dab1b-947b-4498-9871-860347e5eb79.jpg" width="500">
+<img src="https://user-images.githubusercontent.com/16921266/154864156-85036a3c-dadd-43e4-8975-d9206ffe572a.jpg" width="500">
