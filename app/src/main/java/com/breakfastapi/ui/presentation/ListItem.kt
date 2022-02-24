@@ -2,6 +2,7 @@ package com.breakfastapi.ui.presentation
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.AbsoluteCutCornerShape
@@ -54,18 +55,29 @@ fun ListItem(recipe: Recipe, onClick: () -> Unit) {
                     }
                 }
             }
-            Column(modifier = Modifier.padding(start = 10.dp, end = 5.dp,), horizontalAlignment = Alignment.CenterHorizontally) {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp),
+                horizontalAlignment = Alignment.End
+            ) {
 
-                Text(
-                    "${recipe.totalDuration}",
-                    style = MaterialTheme.typography.h2,
-                    textAlign = TextAlign.Center
-                )
-                Text(
-                    "minutes",
-                    style = MaterialTheme.typography.h4,
-                    textAlign = TextAlign.Center
-                )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+
+
+                    Text(
+                        "${recipe.totalDuration}",
+                        style = MaterialTheme.typography.h2,
+                        textAlign = TextAlign.Center
+                    )
+                    Text(
+                        "minutes",
+                        style = MaterialTheme.typography.h4,
+                        textAlign = TextAlign.Center
+                    )
+                }
             }
         }
     }
